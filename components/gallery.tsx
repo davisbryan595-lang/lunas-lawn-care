@@ -5,34 +5,32 @@ import { X } from "lucide-react"
 
 const galleryImages = [
   {
-    title: "Lawn Transformation",
-    before: "/images/gallery-1-before.jpg",
-    after: "/images/gallery-1-after.jpg",
+    title: "Service 1",
+    image: "/lunastuff/IMG-20251204-WA0048.jpg",
   },
   {
-    title: "Aeration Service",
-    before: "/images/gallery-2-before.jpg",
-    after: "/images/gallery-2-after.jpg",
+    title: "Service 2",
+    image: "/lunastuff/IMG-20251204-WA0049.jpg",
   },
   {
-    title: "Sod Installation",
-    before: "/images/gallery-3-before.jpg",
-    after: "/images/gallery-3-after.jpg",
+    title: "Service 3",
+    image: "/lunastuff/IMG-20251204-WA0050.jpg",
   },
   {
-    title: "Weed Control",
-    before: "/images/gallery-4-before.jpg",
-    after: "/images/gallery-4-after.jpg",
+    title: "Service 4",
+    image: "/lunastuff/IMG-20251204-WA0051.jpg",
   },
   {
-    title: "Full Landscape",
-    before: "/images/gallery-5-before.jpg",
-    after: "/images/gallery-5-after.jpg",
+    title: "Service 5",
+    image: "/lunastuff/IMG-20251204-WA0052.jpg",
   },
   {
-    title: "Tree Removal",
-    before: "/images/gallery-6-before.jpg",
-    after: "/images/gallery-6-after.jpg",
+    title: "Service 6",
+    image: "/lunastuff/IMG-20251204-WA0053.jpg",
+  },
+  {
+    title: "Service 7",
+    image: "/lunastuff/IMG-20251204-WA0054.jpg",
   },
 ]
 
@@ -49,20 +47,13 @@ export default function Gallery() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {galleryImages.map((item, idx) => (
-            <div key={idx} className="group cursor-pointer" onClick={() => setSelected(idx)}>
+            <div key={idx} className="group cursor-pointer slide-up-fade-in" onClick={() => setSelected(idx)} style={{ animationDelay: `${idx * 0.1}s` }}>
               <div className="relative h-64 bg-muted rounded-xl overflow-hidden border-4 border-secondary shadow-lg hover:shadow-2xl transition">
-                <div className="grid grid-cols-2 h-full">
-                  <img
-                    src={item.before || "/placeholder.svg"}
-                    alt={`${item.title} - Before`}
-                    className="w-full h-full object-cover"
-                  />
-                  <img
-                    src={item.after || "/placeholder.svg"}
-                    alt={`${item.title} - After`}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
+                <img
+                  src={item.image || "/placeholder.svg"}
+                  alt={item.title}
+                  className="w-full h-full object-cover fade-in"
+                />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition flex items-center justify-center">
                   <div className="text-primary-foreground font-bold text-center opacity-0 group-hover:opacity-100 transition">
                     {item.title}
@@ -77,37 +68,22 @@ export default function Gallery() {
       {/* Lightbox */}
       {selected !== null && (
         <div
-          className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4"
+          className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4 fade-in"
           onClick={() => setSelected(null)}
         >
-          <div className="relative bg-card rounded-xl max-w-2xl w-full p-4" onClick={(e) => e.stopPropagation()}>
+          <div className="relative bg-card rounded-xl max-w-2xl w-full p-4 slide-up-fade-in" onClick={(e) => e.stopPropagation()}>
             <button
               onClick={() => setSelected(null)}
               className="absolute top-2 right-2 bg-primary text-primary-foreground p-2 rounded-full hover:bg-primary/90 transition z-10"
             >
               <X size={24} />
             </button>
-            <div className="grid grid-cols-2 gap-4">
-              <div className="relative h-96 bg-muted rounded-lg overflow-hidden">
-                <img
-                  src={galleryImages[selected].before || "/placeholder.svg"}
-                  alt={`${galleryImages[selected].title} - Before`}
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute bottom-2 left-2 bg-primary text-primary-foreground px-3 py-1 rounded font-semibold text-sm">
-                  Before
-                </div>
-              </div>
-              <div className="relative h-96 bg-muted rounded-lg overflow-hidden">
-                <img
-                  src={galleryImages[selected].after || "/placeholder.svg"}
-                  alt={`${galleryImages[selected].title} - After`}
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute bottom-2 left-2 bg-accent text-foreground px-3 py-1 rounded font-semibold text-sm">
-                  After
-                </div>
-              </div>
+            <div className="relative h-96 bg-muted rounded-lg overflow-hidden">
+              <img
+                src={galleryImages[selected].image || "/placeholder.svg"}
+                alt={galleryImages[selected].title}
+                className="w-full h-full object-cover fade-in"
+              />
             </div>
             <h3 className="text-xl font-bold text-primary mt-4">{galleryImages[selected].title}</h3>
           </div>
