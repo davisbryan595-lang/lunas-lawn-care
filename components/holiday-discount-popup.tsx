@@ -28,7 +28,7 @@ export default function HolidayDiscountPopup() {
     setIsOpen(false)
   }
 
-  if (!isOpen) return null
+  if (!isMounted || !isOpen) return null
 
   return (
     <>
