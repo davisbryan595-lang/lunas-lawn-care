@@ -34,12 +34,12 @@ export default function HolidayDiscountPopup() {
     <>
       {/* Overlay */}
       <div
-        className="fixed inset-0 bg-black/50 z-40"
+        className="fixed inset-0 bg-black/50 z-40 fade-in"
         onClick={handleClose}
       />
 
       {/* Modal */}
-      <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 w-full max-w-md mx-4">
+      <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 w-full max-w-md mx-4 slide-up-fade-in">
         <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl shadow-2xl p-6 sm:p-8 relative">
           <button
             onClick={handleClose}
