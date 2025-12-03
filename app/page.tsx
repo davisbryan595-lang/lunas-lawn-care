@@ -12,6 +12,7 @@ import Footer from "@/components/footer"
 import FloatingCallButton from "@/components/floating-call-button"
 import Preloader from "@/components/preloader"
 import GrassParticles from "@/components/grass-particles"
+import HolidayDiscountPopup from "@/components/holiday-discount-popup"
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true)
@@ -38,6 +39,7 @@ export default function Home() {
       <ContactForm />
       <Footer />
       <FloatingCallButton />
+      <HolidayDiscountPopup />
     </main>
   )
 }
