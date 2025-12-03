@@ -10,18 +10,12 @@ export default function HolidayDiscountPopup() {
   useEffect(() => {
     setIsMounted(true)
 
-    // Check if popup has been shown before
-    const hasShown = localStorage.getItem('holidayPopupShown_v1')
+    // Show popup after a short delay on every refresh
+    const timer = setTimeout(() => {
+      setIsOpen(true)
+    }, 500)
 
-    if (!hasShown) {
-      // Show popup after a short delay
-      const timer = setTimeout(() => {
-        setIsOpen(true)
-        localStorage.setItem('holidayPopupShown_v1', 'true')
-      }, 500)
-
-      return () => clearTimeout(timer)
-    }
+    return () => clearTimeout(timer)
   }, [])
 
   const handleClose = () => {
