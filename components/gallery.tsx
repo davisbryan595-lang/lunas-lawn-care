@@ -5,34 +5,32 @@ import { X } from "lucide-react"
 
 const galleryImages = [
   {
-    title: "Lawn Transformation",
-    before: "/images/gallery-1-before.jpg",
-    after: "/images/gallery-1-after.jpg",
+    title: "Service 1",
+    image: "/lunastuff/IMG-20251204-WA0048.jpg",
   },
   {
-    title: "Aeration Service",
-    before: "/images/gallery-2-before.jpg",
-    after: "/images/gallery-2-after.jpg",
+    title: "Service 2",
+    image: "/lunastuff/IMG-20251204-WA0049.jpg",
   },
   {
-    title: "Sod Installation",
-    before: "/images/gallery-3-before.jpg",
-    after: "/images/gallery-3-after.jpg",
+    title: "Service 3",
+    image: "/lunastuff/IMG-20251204-WA0050.jpg",
   },
   {
-    title: "Weed Control",
-    before: "/images/gallery-4-before.jpg",
-    after: "/images/gallery-4-after.jpg",
+    title: "Service 4",
+    image: "/lunastuff/IMG-20251204-WA0051.jpg",
   },
   {
-    title: "Full Landscape",
-    before: "/images/gallery-5-before.jpg",
-    after: "/images/gallery-5-after.jpg",
+    title: "Service 5",
+    image: "/lunastuff/IMG-20251204-WA0052.jpg",
   },
   {
-    title: "Tree Removal",
-    before: "/images/gallery-6-before.jpg",
-    after: "/images/gallery-6-after.jpg",
+    title: "Service 6",
+    image: "/lunastuff/IMG-20251204-WA0053.jpg",
+  },
+  {
+    title: "Service 7",
+    image: "/lunastuff/IMG-20251204-WA0054.jpg",
   },
 ]
 
