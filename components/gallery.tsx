@@ -47,12 +47,12 @@ export default function Gallery() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {galleryImages.map((item, idx) => (
-            <div key={idx} className="group cursor-pointer" onClick={() => setSelected(idx)}>
+            <div key={idx} className="group cursor-pointer slide-up-fade-in" onClick={() => setSelected(idx)} style={{ animationDelay: `${idx * 0.1}s` }}>
               <div className="relative h-64 bg-muted rounded-xl overflow-hidden border-4 border-secondary shadow-lg hover:shadow-2xl transition">
                 <img
                   src={item.image || "/placeholder.svg"}
                   alt={item.title}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover fade-in"
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition flex items-center justify-center">
                   <div className="text-primary-foreground font-bold text-center opacity-0 group-hover:opacity-100 transition">
