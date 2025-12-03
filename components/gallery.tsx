@@ -68,10 +68,10 @@ export default function Gallery() {
       {/* Lightbox */}
       {selected !== null && (
         <div
-          className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4"
+          className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4 fade-in"
           onClick={() => setSelected(null)}
         >
-          <div className="relative bg-card rounded-xl max-w-2xl w-full p-4" onClick={(e) => e.stopPropagation()}>
+          <div className="relative bg-card rounded-xl max-w-2xl w-full p-4 slide-up-fade-in" onClick={(e) => e.stopPropagation()}>
             <button
               onClick={() => setSelected(null)}
               className="absolute top-2 right-2 bg-primary text-primary-foreground p-2 rounded-full hover:bg-primary/90 transition z-10"
@@ -82,7 +82,7 @@ export default function Gallery() {
               <img
                 src={galleryImages[selected].image || "/placeholder.svg"}
                 alt={galleryImages[selected].title}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover fade-in"
               />
             </div>
             <h3 className="text-xl font-bold text-primary mt-4">{galleryImages[selected].title}</h3>
