@@ -49,18 +49,11 @@ export default function Gallery() {
           {galleryImages.map((item, idx) => (
             <div key={idx} className="group cursor-pointer" onClick={() => setSelected(idx)}>
               <div className="relative h-64 bg-muted rounded-xl overflow-hidden border-4 border-secondary shadow-lg hover:shadow-2xl transition">
-                <div className="grid grid-cols-2 h-full">
-                  <img
-                    src={item.before || "/placeholder.svg"}
-                    alt={`${item.title} - Before`}
-                    className="w-full h-full object-cover"
-                  />
-                  <img
-                    src={item.after || "/placeholder.svg"}
-                    alt={`${item.title} - After`}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
+                <img
+                  src={item.image || "/placeholder.svg"}
+                  alt={item.title}
+                  className="w-full h-full object-cover"
+                />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition flex items-center justify-center">
                   <div className="text-primary-foreground font-bold text-center opacity-0 group-hover:opacity-100 transition">
                     {item.title}
