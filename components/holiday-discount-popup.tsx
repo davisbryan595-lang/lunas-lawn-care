@@ -5,17 +5,20 @@ import { X } from 'lucide-react'
 
 export default function HolidayDiscountPopup() {
   const [isOpen, setIsOpen] = useState(false)
+  const [isMounted, setIsMounted] = useState(false)
 
   useEffect(() => {
-    // Check if popup has been shown in this session
-    const popupShown = sessionStorage.getItem('holidayPopupShown')
+    setIsMounted(true)
 
-    if (!popupShown) {
+    // Check if popup has been shown before
+    const hasShown = localStorage.getItem('holidayPopupShown_v1')
+
+    if (!hasShown) {
       // Show popup after a short delay
       const timer = setTimeout(() => {
         setIsOpen(true)
-        sessionStorage.setItem('holidayPopupShown', 'true')
-      }, 1000)
+        localStorage.setItem('holidayPopupShown_v1', 'true')
+      }, 500)
 
       return () => clearTimeout(timer)
     }
