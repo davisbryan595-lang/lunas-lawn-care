@@ -78,27 +78,12 @@ export default function Gallery() {
             >
               <X size={24} />
             </button>
-            <div className="grid grid-cols-2 gap-4">
-              <div className="relative h-96 bg-muted rounded-lg overflow-hidden">
-                <img
-                  src={galleryImages[selected].before || "/placeholder.svg"}
-                  alt={`${galleryImages[selected].title} - Before`}
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute bottom-2 left-2 bg-primary text-primary-foreground px-3 py-1 rounded font-semibold text-sm">
-                  Before
-                </div>
-              </div>
-              <div className="relative h-96 bg-muted rounded-lg overflow-hidden">
-                <img
-                  src={galleryImages[selected].after || "/placeholder.svg"}
-                  alt={`${galleryImages[selected].title} - After`}
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute bottom-2 left-2 bg-accent text-foreground px-3 py-1 rounded font-semibold text-sm">
-                  After
-                </div>
-              </div>
+            <div className="relative h-96 bg-muted rounded-lg overflow-hidden">
+              <img
+                src={galleryImages[selected].image || "/placeholder.svg"}
+                alt={galleryImages[selected].title}
+                className="w-full h-full object-cover"
+              />
             </div>
             <h3 className="text-xl font-bold text-primary mt-4">{galleryImages[selected].title}</h3>
           </div>
