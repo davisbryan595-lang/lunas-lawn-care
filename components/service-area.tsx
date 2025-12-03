@@ -9,17 +9,16 @@ export default function ServiceArea() {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Left: Map/Image */}
           <div className="relative h-96 bg-gradient-to-br from-primary to-accent rounded-xl overflow-hidden shadow-2xl hover:shadow-3xl transition">
-            <img
-              src={`/placeholder.svg?height=400&width=400&query=Highlands County Florida map region`}
-              alt="Service Area Map"
-              className="w-full h-full object-cover opacity-80"
+            <iframe
+              title="Highlands County, Florida Map"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d898828.3999031562!2d-81.5!3d27.5!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88dd4b8f6c1c0001%3A0xf00ef62049671090!2sHighlands%20County%2C%20Florida!5e0!3m2!1sen!2sus!4v1609906000000"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
             />
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="text-primary-foreground text-center">
-                <MapPin size={48} className="mx-auto mb-4" />
-                <p className="text-2xl font-bold">Highlands County, FL</p>
-              </div>
-            </div>
           </div>
 
           {/* Right: Text Content */}
